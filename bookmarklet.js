@@ -55,7 +55,7 @@ document.querySelector('body').classList.toggle('ad-skin-active');
 const res = await fetch(window.location.href);
 const h = {}; res.headers.forEach((v,k) => h[k] = v);
 const getPoweredBy = () => {
-  if (h['x-powered-by']) return h['x-service-name'] ? `${h['x-powered-by']}<br />${h['x-service-name']}` : h['x-powered-by'];
+  if (h['x-powered-by']) return h['x-service-name'] ? `${h['x-powered-by']}<br />(${h['x-service-name']} service)` : h['x-powered-by'];
   if (h.link?.includes('api.w.org')) return 'Wordpress';
   if (h.server) return h.server;
   return 'Unknown';
